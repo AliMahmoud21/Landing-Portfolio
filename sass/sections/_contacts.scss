@@ -1,0 +1,120 @@
+// Importing other files
+@use '../globals/variable' as*;
+
+
+// Styling the contact section
+.contact {
+    margin-top: 2rem;
+    padding: 4rem 6rem;
+    background-color: $dark-deg2;
+    // width: 100%;
+    .content-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .content {
+            // display: flex;
+
+            nav {
+                .text {
+                    color: $light-gray;
+        
+                    font: {
+                        size: 4rem;
+                        weight: 800;
+                        family: 'Handjet', cursive;
+                    }
+        
+                    img {
+                        width: 50px;
+                    }
+                }
+            }
+        }
+        .links {
+            display: flex;
+            flex-direction: column;
+            // margin-left: 6rem;
+
+            a {
+                padding-bottom: 1rem;
+                color: $white;
+                font-size: 1.25rem;
+                transition: $transition;
+
+                &:hover {
+                    color: $light-gray;
+                    text-decoration: line-through;
+                }
+            }
+        }
+
+        .socials {
+            display: flex;
+            flex-direction: column;
+
+            .social-icons {
+                margin-bottom: 2.5rem;
+                i {
+                    color: $white;
+                    font-size: 2rem;
+                    margin-right: 1rem;
+                }
+            }
+
+            .frontend {
+                h2 {
+                    color: $dark-orange;
+                    margin-bottom: 1rem;
+                }
+
+                a {
+                    color: $white;
+                    text-decoration: underline;
+                    font-size: 1.125rem;
+                    transition: $transition;
+
+                    &:hover {
+                        color: $light-gray;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+
+@media (max-width: 991px) {
+    .contact {
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .links {
+                margin: 6rem 0;
+            }
+
+            .frontend {
+                margin-bottom: 4rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .contact {
+        .content-container {
+            .socials {
+                .social-icons {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 2rem;
+                }
+            }
+        }
+    }
+}

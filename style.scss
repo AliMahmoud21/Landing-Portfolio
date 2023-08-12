@@ -1,0 +1,10 @@
+// Importing other files
+@use 'sass/globals/globals';
+@use 'sass/globals/variable' as*;
+
+// Importing section files
+@use 'sass/sections/controls';
+@use 'sass/sections/header';
+@use 'sass/sections/about';
+@use 'sass/sections/projects';
+@use 'sass/sections/contacts';

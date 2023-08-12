@@ -1,0 +1,174 @@
+// Importing other files
+@use '../globals/variable' as*;
+
+
+// Styling the header section
+.header {
+    padding: 1rem 4rem;
+
+    // Styling the nav section
+    nav {
+        .text {
+            color: $light-gray;
+
+            font: {
+                size: 4rem;
+                weight: 800;
+                family: 'Handjet', cursive;
+            }
+
+            img {
+                width: 50px;
+            }
+        }
+    }
+
+    // styling the content of the home page
+    .home-content {
+        padding: 0 8rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 10rem;
+
+        .left-header-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 8rem 0 0;
+
+            h4 {
+                position: relative;
+                color: $light-gray;
+                padding-left: 1rem;
+                font: {
+                    size: 1.4rem;
+                    weight: normal;
+                    family: 'Lumanosimo', cursive;
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: -0.25rem;
+                    transform: translate(-50%, -50%);
+                    height: 2px;
+                    width: 2rem;
+                    background-color: $light-gray;
+                }
+            }
+
+            h1 {
+                color: $white;
+                margin-top: .5rem;
+                // text-transform: uppercase;
+                font: {
+                    size: 4rem;
+                    weight: normal;
+                    // family: 'Lumanosimo', cursive;
+                };
+            }
+
+            span {
+                margin-top: .65rem;
+                color: $light-gray;
+                position: relative;
+                font: {
+                    size: 1.4rem;
+                    weight: normal;
+                    family: 'Lumanosimo', cursive;
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 14.5rem;
+                    transform: translate(-50%, -50%);
+                    height: 2px;
+                    width: 5rem;
+                    background-color: $light-gray;
+                }
+            }
+
+            p {
+                margin-top: 2rem;
+                color: $dark-white;
+                line-height: 1.6;
+                font-size: 1.25rem;
+            }
+
+            .btns {
+                margin-top: 4rem;
+
+                a {
+                    color: $white;
+                    padding: 1rem 2rem;
+                    text-transform: uppercase;
+                    transition: $transition;
+
+                    &:hover {
+                        color: $light-gray;
+                    }
+                }
+                .outlined-btn {
+                    border: 2px solid $light-gray;
+                    border-radius: 1.25rem 0 1.25rem 0;
+                }
+            }
+        }
+
+        .right-header-content {
+            .image {
+                width: 450px;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 991px) {
+    .home-content {
+        .image {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .home-content {
+        .image {
+            display: none;
+        }
+
+        .btns {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+
+    .header {
+
+        padding: 1rem 2rem;
+        nav {
+            .text {
+                font-size: 3rem;
+            }
+        }
+
+        .home-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}

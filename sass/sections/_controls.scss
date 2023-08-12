@@ -1,0 +1,80 @@
+// Importing other important files
+@use '../globals/variable' as*;
+
+
+// Styling the controls section
+.controls {
+    position: fixed;
+    z-index: 10;
+    top: 50%;
+    right: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-50%);
+    background-color: $gray;
+    border-radius: 50px;
+    box-shadow: $box-shadow-1;
+    padding: .5rem 0;
+
+    .active-btn {
+        transition: $transition;
+
+        a {
+            i {
+                color: $light-gray; 
+            }
+        }
+
+    }
+
+    .control{
+        cursor: pointer;
+        width: 55px;
+        height: 55px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        i {
+            font-size: 1.2rem;
+            color: $white;
+            pointer-events: none;
+        }
+    }
+}
+
+
+@media (max-width: 992px) {
+    .controls {
+        .control {
+            &#about {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .controls{
+        top: auto;
+        bottom: 0;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        padding-top: 1rem;
+        border-radius: 0 0 0 0;
+
+        .control {
+            margin-left: 1rem;
+
+            i {
+                font-size: 1.25rem;
+            }
+        }
+    }
+}
